@@ -18,7 +18,7 @@ cursor.execute("CREATE TABLE IF NOT EXIST Producto(id INTEGER PRIMARY KEY,nombre
 cursor.execute("CREATE TABLE IF NOT EXIST Sucursal(id INTEGER PRIMARY KEY,nombre TEXT NOT NULL,direccion TEXT NOT NULL);")
 
 # STOCK
-cursor.execute("CREATE TABLE IF NOT EXIST Stock(id INTEGER PRIMARY KEY,sucursal_id INTEGER,producto_id INTEGER,cantidad INTEGER(unique together(sucursal_id,producto_id)) );")
+cursor.execute("CREATE TABLE IF NOT EXIST Stock(id INTEGER PRIMARY KEY,sucursal_id INTEGER,producto_id INTEGER,cantidad INTEGER(UNIQUE(sucursal_id,producto_id)) );")
 
 # CLIENTE
 cursor.execute("CREATE TABLE IF NOT EXIST Cliente(id INTEGER PRIMARY KEY,nombre TEXT NOT NULL,telefono INTEGER);")
